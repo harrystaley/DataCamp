@@ -1,6 +1,3 @@
-cleanliness,safety,satisfaction
-Clean,Neutral,Very satisfied
-Average,Very safe,Neutral
-Somewhat clean,Somewhat safe,Somewhat satisfied
-Somewhat dirty,Very unsafe,Somewhat unsatisfied
-Dirty,Somewhat unsafe,Very unsatisfied
+version https://git-lfs.github.com/spec/v1
+oid sha256:0d2c8ea9d8436095f6b337512664340427b34adfe18b1e82d5c535ccaa860178
+size 222
