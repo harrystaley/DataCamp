@@ -1,5 +1,7 @@
 # Readme
 
+### NOTE: The notebooks, data, and outputs are provided for demonstration of my progress and completion of coursework on Data Camp or other allowable uses. They are expressly NOT for the encouragement or endorsement of any kind of academic dishonesty or cheating.
+
 ### Getting Started
 
 1. Install python 3.
