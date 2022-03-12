@@ -41,6 +41,14 @@ SELECT MAX(gross)
 FROM films
 WHERE release_year BETWEEN 2000 AND 2012;
 
+--A note on arithmetic
+--Multiply
+SELECT (4 * 3);
+--Divide Integers
+SELECT (4 / 3); -- WARNING: Returns how many times one number goes into another without a remainder.
+--Divide Floats
+SELECT (4.0 / 3.0) AS result; -- NOTE: For more precision convert integers to floats.
+
 ---It's AS simple AS aliasing
 SELECT title, gross - budget AS net_profit
 FROM films;
@@ -62,5 +70,4 @@ FROM films;
 
 SELECT (MAX(release_year)-MIN(release_year)) / 10 AS number_of_decades
 FROM films;
-
 

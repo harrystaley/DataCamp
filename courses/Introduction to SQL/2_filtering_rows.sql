@@ -47,6 +47,22 @@ WHERE language = 'Spanish'
 AND release_year > 2000
 AND release_year < 2010;
 
+--WHERE AND OR
+SELECT title
+FROM films
+WHERE release_year = 1994
+OR release_year = 2000;
+
+SELECT title
+FROM films
+WHERE release_year = 1994
+OR release_year = 2000;
+
+SELECT title
+FROM films
+WHERE (release_year = 1994 OR release_year = 1995)
+AND (certification = 'PG' OR certification = 'R');
+
 ----WHERE AND OR (2)
 SELECT title, release_year
 FROM films
@@ -63,7 +79,18 @@ WHERE (release_year >= 1990 AND release_year < 2000)
 AND (language = 'French' OR language = 'Spanish')
 AND gross > 2000000;
 
-----BETWEEN (2)
+--BETWEEN
+SELECT title
+FROM films
+WHERE release_year >= 1994
+AND release_year <= 2000;
+
+SELECT title
+FROM films
+WHERE release_year >= 1994
+AND release_year <= 2000;
+
+--BETWEEN (2)
 SELECT title, release_year
 FROM films
 WHERE release_year BETWEEN 1990 AND 2000;
