@@ -1,2 +1,449 @@
-*.plk filter=lfs diff=lfs merge=lfs -text
-*.csv filter=lfs diff=lfs merge=lfs -text
+# Common settings that generally should always be used with your language specific settings
+
+# Auto detect text files and perform LF normalization
+*          text=auto
+
+#
+# The above will handle all files NOT found below
+#
+
+# Documents
+*.bibtex   text diff=bibtex
+*.doc      diff=astextplain
+*.DOC      diff=astextplain
+*.docx     diff=astextplain
+*.DOCX     diff=astextplain
+*.dot      diff=astextplain
+*.DOT      diff=astextplain
+*.pdf      diff=astextplain
+*.PDF      diff=astextplain
+*.rtf      diff=astextplain
+# Adobe Flash authoring file
+*.fla  text
+
+# ActionScript file
+*.as   text
+
+# Flash XML file
+*.xml  text
+
+# Treat .swf and .swc as binary
+# https://stackoverflow.com/q/1529178
+
+# Compiled Flash file
+*.swf  binary -crlf -diff -merge
+
+# Compiled Flash Library/Script
+*.swc  binary -crlf -diff -merge
+
+# ActionScript Communication file
+*.asc  text
+# Handle line endings automatically for files detected as text
+# and leave all files detected as binary untouched.
+*     text=auto
+
+# Ada files
+*.ada text diff=ada
+*.adb text diff=ada
+*.ads text diff=ada
+# Handle line endings automatically for files detected as text
+# and leave all files detected as binary untouched.
+*               text=auto
+
+#
+# The above will handle all files NOT found below
+#
+# These files are text and should be normalized (Convert crlf => lf)
+*.bal           text
+*.bash          text eol=lf
+*.css           text diff=css
+*.df            text
+*.htm           text diff=html
+*.html          text diff=html
+*.js            text
+*.json          text
+*.properties    text
+*.sh            text eol=lf
+*.tld           text
+*.txt           text
+# Sources
+*.c     text diff=cpp
+*.cc    text diff=cpp
+*.cxx   text diff=cpp
+*.cpp   text diff=cpp
+*.c++   text diff=cpp
+*.hpp   text diff=cpp
+*.h     text diff=cpp
+*.h++   text diff=cpp
+*.hh    text diff=cpp
+
+# Compiled Object files
+*.slo   binary
+*.lo    binary
+*.o     binary
+*.obj   binary
+
+# Precompiled Headers
+*.gch   binary
+*.pch   binary
+# Auto detect text files and perform LF normalization
+*          text=auto
+
+*.cs       text diff=csharp
+*.cshtml   text diff=html
+*.csx      text diff=csharp
+*.sln      text eol=crlf merge=union
+*.csproj   text merge=union
+#
+# Project files
+#
+
+# Delphi form module
+*.dfm  text
+
+# Delphi project options file
+*.dof  text
+
+# Desktop configuration
+*.dsk  binary
+
+#
+# General
+#
+
+# Text file
+*.txt  text
+
+# Drupal git normalization
+# @see https://www.kernel.org/pub/software/scm/git/docs/gitattributes.html
+# @see https://www.drupal.org/node/1542048
+
+# Normally these settings would be done with macro attributes for improved
+# readability and easier maintenance. However macros can only be defined at the
+# repository root directory. Drupal avoids making any assumptions about where it
+# is installed.
+
+# Define text file attributes.
+# - Treat them as text.
+# - Ensure no CRLF line-endings, neither on checkout nor on checkin.
+# - Detect whitespace errors.
+#   - Exposed by default in `git diff --color` on the CLI.
+#   - Validate with `git diff --check`.
+#   - Deny applying with `git apply --whitespace=error-all`.
+#   - Fix automatically with `git apply --whitespace=fix`.
+
+*.bash    text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2 diff=php
+*.config  text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2
+# Handle line endings automatically for files detected as text
+# and leave all files detected as binary untouched.
+*     text=auto
+
+# Elixir files
+*.ex  diff=elixir
+*.exs diff=elixir
+# Auto detect text files and perform LF normalization
+*                 text=auto
+
+# Always perform LF normalization
+*.dart            text
+*.gradle          text
+*.html            text
+*.java            text
+*.json            text
+*.md              text
+*.py              text
+*.sh              text
+*.txt             text
+*.xml             text
+*.yaml            text
+
+# Make sure that these Windows files always have CRLF line endings at checkout
+*.bat             text eol=crlf
+*.ps1             text eol=crlf
+*.rc              text eol=crlf
+# Handle line endings automatically for files detected as text
+# and leave all files detected as binary untouched.
+*     text=auto
+
+# Fortran files
+*.f   text diff=fortran
+*.for text diff=fortran
+*.f90 text diff=fortran
+*.f95 text diff=fortran
+*.f03 text diff=fortran
+# Handle line endings automatically for files detected as text
+# and leave all files detected as binary untouched.
+*          text=auto
+
+# Fountain files
+*.fountain text diff=fountain
+*.pdf      binary
+*.fdx      text
+# Auto detect text files and perform LF normalization
+*          text=auto
+
+*.fs       text diff=fsharp
+*.fsx      text diff=fsharp
+*.sln      text eol=crlf merge=union
+*.fsproj   text merge=union
+# Treat all Go files in this repo as binary, with no git magic updating
+# line endings. Windows users contributing to Go will need to use a
+# modern version of git and editors capable of LF line endings.
+
+*.go -text diff=golang
+# Java sources
+*.java          text diff=java
+*.kt            text diff=kotlin
+*.groovy        text diff=java
+*.scala         text diff=java
+*.gradle        text diff=java
+*.gradle.kts    text diff=kotlin
+
+# These files are text and should be normalized (Convert crlf => lf)
+*.css           text diff=css
+*.scss          text diff=css
+*.sass          text
+*.df            text
+*.htm           text diff=html
+*.html          text diff=html
+*.js            text
+*.jsp           text
+*.jspf          text
+*.jspx          text
+*.properties    text
+# Basic .gitattributes for a Lua repo.
+
+# Source files
+# ============
+*.lua       text
+
+# Luadoc output
+# =============
+*.html      text diff=html
+*.css       text diff=css
+# Basic .gitattributes for a Mathematica repo.
+
+# Source files
+# Caution: *.m also matches Matlab files.
+# ============
+*.nb             text diff=mathematica
+*.wls            text diff=mathematica
+*.wl             text diff=mathematica
+*.m              text diff=mathematica
+
+# Test files
+# ==========
+*.wlt            text diff=mathematica
+*.mt             text diff=mathematica
+
+# Binary files
+# ============
+*.mx             binary
+# Basic .gitattributes for a MATLAB repo.
+# This template includes Simulink and MuPAD extensions, in addition
+# to the MATLAB extensions.
+
+# Source files
+# ============
+*.m             text diff=matlab
+*.mu            text diff=matlab
+
+# Caution: *.m also matches Mathematica packages.
+
+# Binary files
+# ============
+*.p             binary
+*.mex*          binary
+*.fig           binary
+*.mat           binary
+*.mdl           binary
+*.slx           binary
+*.mdlp          binary
+
+# Basic .gitattributes for a Microsoft Shell repo.
+
+# Source files
+# ============
+*.msh      text eol=crlf
+*.msh1     text eol=crlf
+*.msh2     text eol=crlf
+*.mshxml   text eol=crlf
+*.msh1xml  text eol=crlf
+*.msh2xml  text eol=crlf
+*.mcf      text eol=crlf
+# compare .pbxproj files as binary and always merge as union
+*.pbxproj binary -merge=union
+*.m       text diff=objc
+# Lazarus Project Information file (stored in XML; contains project-specific settings)
+*.lpi      text
+
+# Lazarus Program file; contains Pascal source of main program
+*.lpr      text
+
+# Lazarus Form file; contains configuration information for all objects on a form
+# (stored in a Lazarus-specific format; the actions are described by Pascal source code in a corresponding *.pas file)
+*.lfm      text
+
+# Unit with Pascal code (typically for a form stored in a corresponding *.lfm file)
+*.pas      text diff=pascal
+
+# Pascal code
+*.p        text diff=pascal
+*.pp       text diff=pascal
+
+# Lazarus Resource file (this is a generated file; not to be confused with a Windows resource file).
+*.lrs      text
+
+# Basic .gitattributes for a perl repo.
+
+# Source files
+# ============
+*.pl text diff=perl
+*.pm text diff=perl
+# Basic .gitattributes for a PowerShell repo.
+
+# Source files
+# ============
+*.ps1      text eol=crlf
+*.ps1x     text eol=crlf
+*.psm1     text eol=crlf
+*.psd1     text eol=crlf
+*.ps1xml   text eol=crlf
+*.pssc     text eol=crlf
+*.psrc     text eol=crlf
+*.cdxml    text eol=crlf
+# Basic .gitattributes for a python repo.
+
+# Source files
+# ============
+*.pxd    text diff=python
+*.py     text diff=python
+*.py3    text diff=python
+*.pyw    text diff=python
+*.pyx    text diff=python
+*.pyz    text diff=python
+*.pyi    text diff=python
+
+# Binary files
+# ============
+*.db     binary
+*.p      binary
+*.pkl    binary
+*.pickle binary
+*.pyc    binary export-ignore
+*.pyo    binary export-ignore
+# Basic .gitattributes for a R repo.
+
+# Source files
+# ============
+*.Rdata binary
+*.RData binary
+*.rda   binary
+*.rdb   binary
+*.rds   binary
+*.Rd    text
+*.Rdx   binary
+*.Rmd	  text
+*.R  	  text
+*.Rproj text
+*.[Rr]md   linguist-detectable
+# These settings are for Ruby On Rails project
+#
+#
+# Define a dummy ours merge strategy with:
+#
+# $ git config --global merge.ours.driver true
+schema.rb merge=ours diff=ruby
+# Auto detect text files and perform normalization
+*          text=auto
+
+*.rs       text diff=rust
+*.toml     text diff=toml
+Cargo.lock text
+# Auto detect text files and perform LF normalization
+*          text=auto
+
+*.frm -text
+*.val -text
+*.tbl -text
+*.rel -text
+*.obj -text
+*.dbi -text
+*.sec -text
+*.css text diff=css
+*.js       seol=lf
+# Basic .gitattributes for sql files
+
+*.sql linguist-detectable=true
+*.sql linguist-language=sql
+# Swift gitattributes
+*.pbxproj merge=union
+*.swift   text diff=swift
+# Unity
+*.cginc              text
+*.cs                 text diff=csharp
+*.shader             text
+
+# Unity YAML
+*.mat                merge=unityyamlmerge eol=lf
+*.anim               merge=unityyamlmerge eol=lf
+*.unity              merge=unityyamlmerge eol=lf
+*.prefab             merge=unityyamlmerge eol=lf
+*.asset              merge=unityyamlmerge eol=lf
+*.meta               merge=unityyamlmerge eol=lf
+*.controller         merge=unityyamlmerge eol=lf
+
+# "physic" for 3D but "physics" for 2D
+*.physicMaterial2D   merge=unityyamlmerge eol=lf
+*.physicMaterial     merge=unityyamlmerge eol=lf
+*.physicsMaterial2D  merge=unityyamlmerge eol=lf
+*.physicsMaterial    merge=unityyamlmerge eol=lf
+
+# Basic .gitattributes for a Vim repo.
+# Vim on Linux works with LF only, Vim on Windows works with both LF and CRLF
+
+# Source files
+# ============
+*.vim text eol=lf
+.vimrc text eol=lf
+.gvimrc text eol=lf
+###############################################################################
+# Set default behavior to automatically normalize line endings.
+###############################################################################
+*            text=auto
+
+###############################################################################
+# Set the merge driver for project and solution files
+#
+# Merging from the command prompt will add diff markers to the files if there
+# are conflicts (Merging from VS is not affected by the settings below, in VS
+# the diff markers are never inserted). Diff markers may cause the following
+# file extensions to fail to load in VS. An alternative would be to treat
+# these files as binary and thus will always conflict and require user
+# intervention with every merge. To do so, just comment the entries below and
+# uncomment the group further below
+###############################################################################
+
+*.sln        text eol=crlf
+*.csproj     text eol=crlf
+*.vbproj     text eol=crlf
+## GITATTRIBUTES FOR WEB PROJECTS
+#
+# These settings are for any web project.
+#
+# Details per file setting:
+#   text    These files should be normalized (i.e. convert CRLF to LF).
+#   binary  These files are binary and should be left untouched.
+#
+# Note that binary is a macro for -text -diff.
+######################################################################
+
+# Auto detect
+##   Handle line endings automatically for files detected as
+##   text and leave all files detected as binary untouched.
+##   This will handle all files NOT defined below.
+*                 text=auto
+
+# Source code
+*.bash            text eol=lf
+*.bat             text eol=crlf
